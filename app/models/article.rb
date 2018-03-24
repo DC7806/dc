@@ -1,8 +1,8 @@
 class Article < ApplicationRecord
-  
+
   validates :title, :description, :permalink, :content, presence: true
 
-  bofore_save :default_values
+  before_save :default_values
 
   has_one :image, as: :imagable, dependent: :destroy
   accepts_nested_attributes_for :image, allow_destroy: true

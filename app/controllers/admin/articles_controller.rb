@@ -48,7 +48,8 @@ class Admin::ArticlesController < AdminController
   def article_params
     params.require(:admin_article).permit(:title, :description, :permalink, :content,
                                          image_attributes: [:id, :page, :src, :alt, :_destroy],
-                                         metum_attributes: [:id, :page, :title, :meta_description, :og_title, :og_description, :og_image, :_destroy])
+                                         metum_attributes: [:id, :page, :title, :meta_description, :og_title, :og_description, :og_image, :_destroy],
+                                         category_ids: [])
   end
 
 end

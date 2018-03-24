@@ -1,17 +1,27 @@
 <%= simple_form_for admin_article do |f| %>
   <ul class="nav nav-tabs nav-justified my-xs-20" role="tablist">
-    <li class="active"><a role="tab" href="#basic" data-toggle="tab">Basics</a></li>
-    <li ><a role="tab" href="#image" data-toggle="tab">Image</a></li>
+    <li class="active"><a role="tab" href="#basics" data-toggle="tab">Basics</a></li>
+    <li><a role="tab" href="#content" data-toggle="tab">Content</a></li>
     <li ><a role="tab" href="#seo" data-toggle="tab">SEO</a></li>
   </ul>
   <div class="tab-content">
+    <!-- Basics Panel -->
+    <div role="tabpanel" class="tab-pane active" id="basics">
+      <label>Category</label>
+      <div class="form-group">
+        <%= checkbox Category %>
+      </div>
+      <%= f.simple_fields_for :image do |i| %>
+        <div class="form-group">
+          <%= i.input :src, input_html: {'data-default-file': admin_article.image.src.url, class: 'dropify'} %>
+          <%= i.input :alt %>
+        </div>
+      <% end %>
+    </div>
     <!-- Basic Info Panel -->
-    <div role="tabpanel" class="tab-pane active" id="basic">
+    <div role="tabpanel" class="tab-pane" id="content">
       <div class="form-group">
         <%= f.input :title, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.input :permalink, class: 'form-control' %>
       </div>
       <div class="form-group">
         <%= f.input :description, class: 'form-control' %>
@@ -20,17 +30,11 @@
         <%= f.input :content, as: :ckeditor %>
       </div>
     </div>
-    <!-- Image Panel -->
-    <div role="tabpanel" class="tab-pane" id="image">
-      <%= f.simple_fields_for :image do |i| %>
-        <div class="form-group">
-          <%= i.input :src, input_html: {'data-default-file': admin_article.image.src.url, class: 'dropify'} %>
-          <%= i.input :alt %>
-        </div>
-      <% end %>
-    </div>
     <!-- SEO Panel -->
     <div role="tabpanel" class="tab-pane" id="seo">
+      <div class="form-group">
+        <%= f.input :permalink, class: 'form-control' %>
+      </div>
       <%= f.simple_fields_for :metum do |m| %>
       <div class="form-group">
         <%= m.input :title %>

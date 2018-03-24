@@ -1,20 +1,26 @@
 <%= link_to "Add Article", new_admin_article_path, class: "btn btn-default my-xs-20 form-control"%>
 
-<table class="table xs-transform">
+<table class="table xs-transform mt-sm-40">
   <thead class="hidden-xs">
     <tr>
-      <td class="col-sm-2 col-md-2">Date</td>
-      <td class="col-sm-3 col-md-2">Image</td>
-      <td class="col-sm-5 col-md-4">Title</td>
+      <td class="col-sm-1">Date</td>
+      <td class="col-sm-2">Image</td>
+      <td class="col-sm-2">Category</td>
+      <td class="col-sm-3">Title</td>
       <td class="hidden-sm col-md-3">Description</td>
     </tr>
   </thead>
   <tbody>
     <% @admin_articles.each do |article|%>
     <tr>
-      <td class="col-sm-2 col-md-2"><%= article.created_at.to_date %></td>
-      <td class="col-sm-3 col-md-2"><%= image_tag article.image.src, class: "wt-100"%></td>
-      <td class="col-sm-5 col-md-4"><%= article.title %></td>
+      <td class="col-sm-1"><%= article.created_at.to_date %></td>
+      <td class="col-sm-2"><%= image_tag article.image.src, class: "wt-100"%></td>
+      <td class="col-sm-2">
+        <% article.categories.each do |cat| %>
+          <span class="well"><%= cat.name %></span>
+        <% end %>
+      </td>
+      <td class="col-sm-3"><%= article.title %></td>
       <td class="hidden-sm col-md-3"><%= article.description %></td>
       <td class="col-sm-1 text-center">
         <%= link_to edit_admin_article_path(article), class: "btn btn-default" do %>

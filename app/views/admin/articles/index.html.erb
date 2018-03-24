@@ -17,13 +17,13 @@
       <td class="col-sm-5 col-md-4"><%= article.title %></td>
       <td class="hidden-sm col-md-3"><%= article.description %></td>
       <td class="col-sm-1 text-center">
-        <%= link_to edit_admin_article_path(article), class: "btn btn-primary" do %>
+        <%= link_to edit_admin_article_path(article), class: "btn btn-default" do %>
           <i class="fa fa-bolt fa-fw"></i>
         <% end %>
-        <%= link_to article_path(article.permalink), target: "_blank", class: "btn btn-info", style: "margin: 3px 0" do %>
+        <%= link_to article_path(article.permalink), target: "_blank", class: "btn btn-default", style: "margin: 3px 0" do %>
           <i class="fa fa-child fa-fw"></i>
         <% end %>  
-        <%= link_to admin_article_path(article), method: "delete", data: { confirm: "Sure?" }, class: "btn btn-danger" do%>
+        <%= link_to admin_article_path(article), method: "delete", data: { confirm: "Sure?" }, class: "btn btn-default" do%>
           <i class="fa fa-bomb fa-fw"></i>
         <% end %>
       </td>

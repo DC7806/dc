@@ -3,7 +3,7 @@ class Admin::ArticlesController < AdminController
   before_action :find_article, only: [:edit, :update, :destroy]
   
   def index
-    @admin_articles = Admin::Article.order(created_at: :desc)
+    @admin_articles = Admin::Article.includes(:image).order(created_at: :desc)
   end
 
   def new

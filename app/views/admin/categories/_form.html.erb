@@ -1,0 +1,14 @@
+<%= simple_form_for admin_category do |f| %>
+  <div class="form-group mt-xs-20">
+    <%= f.input :name %>
+  </div>
+  <div class="form-group">
+    <%= f.input :permalink %>
+  </div>
+  <div class="form-group">
+    <%= f.button :submit, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= link_to "Cancel", admin_categories_path, class: "btn btn-default form-control"%>
+  </div>
+<% end %>

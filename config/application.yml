@@ -1,0 +1,9 @@
+defaults: &defaults
+  admin_path: "nest"
+  
+
+production:
+  <<: *defaults
+
+development:
+  <<: *defaults

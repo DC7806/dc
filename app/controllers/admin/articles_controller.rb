@@ -9,6 +9,7 @@ class Admin::ArticlesController < AdminController
   def new
     @admin_article = Admin::Article.new
     @admin_article.build_image
+    @admin_article.build_metum
   end
 
   def create
@@ -46,7 +47,8 @@ class Admin::ArticlesController < AdminController
 
   def article_params
     params.require(:admin_article).permit(:title, :description, :permalink, :content,
-                                         image_attributes: [:id, :page, :src, :alt, :_destroy])
+                                         image_attributes: [:id, :page, :src, :alt, :_destroy],
+                                         metum_attributes: [:id, :page, :title, :meta_description, :og_title, :og_description, :og_image, :_destroy])
   end
 
 end

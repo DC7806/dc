@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180324175253) do
+ActiveRecord::Schema.define(version: 20180324175254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,20 @@ ActiveRecord::Schema.define(version: 20180324175253) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["imagable_type", "imagable_id"], name: "index_images_on_imagable_type_and_imagable_id"
+  end
+
+  create_table "meta", force: :cascade do |t|
+    t.string "page"
+    t.string "title"
+    t.string "meta_description"
+    t.string "og_title"
+    t.string "og_description"
+    t.string "og_image"
+    t.string "metable_type"
+    t.bigint "metable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["metable_type", "metable_id"], name: "index_meta_on_metable_type_and_metable_id"
   end
 
 end

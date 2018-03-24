@@ -11,6 +11,12 @@
   <div class="form-group">
     <%= f.input :content, as: :ckeditor %>
   </div>
+  <%= f.simple_fields_for :image do |i| %>
+    <div class="form-group">
+      <%= i.input :src, input_html: {class: 'dropify'} %>
+      <%= i.input :alt %>
+    </div>
+  <% end %>
   <div class="form-group">
     <%= f.button :submit, class: 'form-control' %>
   </div>

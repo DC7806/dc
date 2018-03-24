@@ -1,0 +1,17 @@
+<%= simple_form_for admin_article do |f| %>
+  <div class="form-group mt-xs-20">
+    <%= f.input :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :permalink, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :description, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :content, as: :ckeditor %>
+  </div>
+  <div class="form-group">
+    <%= f.button :submit, class: 'form-control' %>
+  </div>
+<% end %>

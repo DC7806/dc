@@ -3,7 +3,12 @@ class Admin::ArticlesController < AdminController
   before_action :find_article, only: [:edit, :update, :destroy]
   
   def index
-    @admin_articles = Admin::Article.includes(:image).order(created_at: :desc)
+    if params[:query]
+      @admin_articles = Admin::Article.search(params[:query]).includes(:image).order(created_at: :desc).page(params[:page]).per(10)
+      params[:query] = nil
+    else
+      @admin_articles = Admin::Article.includes(:image).order(created_at: :desc).page(params[:page]).per(10)
+    end
   end
 
   def new

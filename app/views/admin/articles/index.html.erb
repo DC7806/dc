@@ -1,3 +1,4 @@
+<%= render 'layouts/search', path: admin_articles_path %>
 <%= link_to "Add Article", new_admin_article_path, class: "btn btn-default my-xs-20 form-control"%>
 
 <table class="table xs-transform mt-sm-40">
@@ -37,3 +38,4 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @admin_articles %>

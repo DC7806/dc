@@ -10,6 +10,11 @@ class Article < ApplicationRecord
   accepts_nested_attributes_for :metum, allow_destroy: true
   has_and_belongs_to_many :categories
 
+  def self.search query
+    where("LOWER(title) LIKE ? OR LOWER(description) LIKE ?",
+          "%#{query.downcase}%", "%#{query.downcase}%")
+  end
+
   private
 
   def default_values

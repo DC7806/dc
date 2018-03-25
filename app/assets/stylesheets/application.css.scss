@@ -2,7 +2,8 @@
 *= require_self
 *= require ./shared/spacing
 *= require font-awesome
-*= require_tree .
+*= require prism
+*= require frontend
  */
 
 @import "bootstrap-sprockets";

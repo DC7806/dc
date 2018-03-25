@@ -1,64 +1,9 @@
 /*
 *= require_self
-*= require_tree ./admin
 *= require font-awesome
 *= require dropify
 *= require ./shared/spacing
+*= require_tree ./admin
 */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-// pagination
-.pagination > .active > a, .pagination > .active > a:hover, 
-.pagination > .active > a:focus, .pagination > .active > span, 
-.pagination > .active > span:hover, .pagination > .active > span:focus {
-    background-color: #888;
-    border-color: #888;
-}
-.pagination > li > a, 
-.pagination > li > span {
-    color: inherit;
-}
-
-// checkbox
-.btn-checkbox:not(:first-of-type) {
-  margin-left: 10px;
-}
-.btn-checkbox > span {
-  margin-left: 5px
-}
-
-tbody > tr:hover {
-    background: #e7e7e7
-  }
-td {
-	vertical-align: middle!important
-}
-.wt-100{
-	width:100%
-}
-.text-area{
-	min-height:160px
-}
-.cke_contents{
-	height:300px !important
-}
-
-
-@media only screen and (max-width: 767px){
-	.btn-add-new, .btn-cancel{
-		width: 100%;
-	}
-	.xs-transform tbody > tr {
-      display: block;
-      background: #e7e7e7;
-      border: 1px solid #e7e7e7;
-      border-radius: 8px;
-      margin: 10px 0;
-    }
-    .xs-transform > tbody > tr > td{
-      display: block;
-      border-top: none;
-      text-align: center;
-    }
-}

@@ -2,13 +2,18 @@
 <html>
   <head>
     <title>Dc</title>
+    <link rel="canonical" href="<%= request.url %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots"   content="all" />
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/nav' %>
+    <div class="main-content-wrapper pt-xs-50">
+      <%= yield %>
+    </div>
   </body>
 </html>

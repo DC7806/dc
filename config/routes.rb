@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   # user
   resources :articles, only: [:index, :show]
+  resources :categories, only: :show
   
   # admin
   namespace :admin, path: Settings.admin_path do

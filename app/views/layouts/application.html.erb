@@ -3,6 +3,7 @@
   <head>
     <title>Dc</title>
     <link rel="canonical" href="<%= request.url %>" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots"   content="all" />
     <%= csrf_meta_tags %>
@@ -12,8 +13,9 @@
 
   <body>
     <%= render 'layouts/nav' %>
-    <div class="main-content-wrapper pt-xs-50">
+    <div class="main-content-wrapper pt-xs-50 pt-sm-70">
       <%= yield %>
     </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

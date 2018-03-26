@@ -7,6 +7,8 @@ class Admin::CategoriesController < AdminController
 
   def new
     @admin_category = Admin::Category.new
+    @admin_category.build_image
+    @admin_category.build_metum
   end
 
   def create
@@ -43,7 +45,9 @@ class Admin::CategoriesController < AdminController
   end
 
   def category_params
-    params.require(:admin_category).permit(:name, :permalink)
+    params.require(:admin_category).permit(:name, :permalink,
+                                          image_attributes: [:id, :page, :src, :alt, :_destroy],
+                                          metum_attributes: [:id, :page, :title, :meta_description, :og_title, :og_description, :og_image, :_destroy])
   end
   
 end

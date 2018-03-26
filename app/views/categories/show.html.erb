@@ -1,0 +1,20 @@
+<div id="category" class="mt-xs-20 mt-sm-60">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <ul class="article-list">
+        <% @category.articles.each do |article| %>
+          <li class="overflow-auto py-xs-20">
+            <article class="article-list-item">
+              <%= link_to article_path(article.permalink) do %>
+              <h3 class="pull-left"><%= article.title %></h3>
+              <% end %>
+              <span class="pull-right"><%= article.created_at.to_date %></span>
+            </article>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

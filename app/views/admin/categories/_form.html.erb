@@ -1,11 +1,46 @@
 <%= simple_form_for admin_category do |f| %>
+  <ul class="nav nav-tabs nav-justified my-xs-20" role="tablist">
+    <li class="active"><a role="tab" href="#basics" data-toggle="tab">Basics</a></li>
+    <li ><a role="tab" href="#seo" data-toggle="tab">SEO</a></li>
+  </ul>
+  <div class="tab-content">
+    <!-- Basics Panel -->
+    <div role="tabpanel" class="tab-pane active" id="basics">
+      <div class="form-group mt-xs-20">
+        <%= f.input :name %>
+      </div>
+      <div class="form-group">
+        <%= f.input :permalink %>
+      </div>
+      <div class="form-group">
+        <%= f.simple_fields_for :image do |i| %>
+        <%= i.input :src, input_html: {'data-default-file': admin_category.metum.og_image.url,class: 'dropify'} %>
+        <%= i.input :alt %>
+        <% end %>
+      </div>
+    </div>
+    <!-- Seo Panel -->
+    <div role="tabpanel" class="tab-pane" id="seo">
+      <%= f.simple_fields_for :metum do |m| %>
+      <div class="form-group">
+        <%= m.input :title %>
+      </div>
+      <div class="form-group">
+        <%= m.input :meta_description, as: :text %>
+      </div>
+      <div class="form-group">
+        <%= m.input :og_title %>
+      </div>
+      <div class="form-group">
+        <%= m.input :og_description, as: :text%>
+      </div>
+      <div class="form-group">
+        <%= m.input :og_image, input_html: {'data-default-file': admin_category.metum.og_image.url,class: 'dropify'} %>
+      </div>
+      <% end %>
+    </div>
+  </div>
   <div class="form-group mt-xs-20">
-    <%= f.input :name %>
-  </div>
-  <div class="form-group">
-    <%= f.input :permalink %>
-  </div>
-  <div class="form-group">
     <%= f.button :submit, class: 'form-control' %>
   </div>
   <div class="form-group">

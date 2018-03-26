@@ -15,6 +15,38 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 
+  # seo
+  def page_meta page = nil
+    if action_name == 'show'
+      @title = page.metum.title
+      @meta_desc = page.metum.meta_description
+      @og = { site_name:   @site_name,
+              type:        page.class.name.downcase,
+              title:       page.metum.title,
+              url:         request.url,
+              description: page.metum.meta_description,
+              image:       (root_url + page.metum.og_image.url if page.metum.og_image.url.present?)}
+    elsif action_name == 'index'
+      @title = Metum.find_page(controller_name).title
+      @meta_desc = Metum.find_page(controller_name).meta_description
+      @og = { site_name:   @site_name,
+              type:        controller_name,
+              title:       Metum.find_page(controller_name).og_title,
+              url:         request.url,
+              description: Metum.find_page(controller_name).og_description,
+              image:       (root_url + Metum.find_page(controller_name).og_image.url if Metum.find_page(controller_name).og_image.url.present?)}              
+    elsif controller_name == 'pages'
+      @title = Metum.find_page(action_name).title
+      @meta_desc = Metum.find_page(action_name).meta_description
+      @og = { site_name:   @site_name,
+              type:        action_name,
+              title:       Metum.find_page(action_name).og_title,
+              url:         request.url,
+              description: Metum.find_page(action_name).og_description,
+              image:       (root_url+Metum.find_page(action_name).og_image.url if Metum.find_page(action_name).og_image.url.present?)}
+    end
+  end
+
   private
 
   def global_settings

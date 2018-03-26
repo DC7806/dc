@@ -44,4 +44,19 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  version :thumb_200 do
+    process resize_to_limit: [200, nil]
+  end
+
+  # version :thumb_200, if: :is_backend? do
+  #   process resize_to_limit: [200, nil]
+  # end
+
+  private
+
+  def is_backend? picture
+    model.class.to_s.start_with? 'Admin'
+  end
+
 end

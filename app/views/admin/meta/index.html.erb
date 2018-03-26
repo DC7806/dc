@@ -1,0 +1,23 @@
+<table class="table xs-transform mt-xs-20">
+  <thead class="hidden-xs">
+    <tr>
+      <td class="col-sm-1">Page</td>
+      <td class="col-sm-2">Image</td>
+      <td class="col-sm-5">Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_meta.each do |metum|%>
+    <tr>
+      <td class="col-sm-1"><%= metum.page %></td>
+      <td class="col-sm-2"><%= admin_index_image metum %></td>
+      <td class="col-sm-8"><%= metum.meta_description %></td>
+      <td class="col-sm-1 text-center">
+        <%= link_to edit_admin_metum_path(metum), class: "btn btn-primary" do %>
+          <i class="fa fa-pencil fa-fw"></i>
+        <% end %> 
+      </td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>

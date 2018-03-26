@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   # user
   resources :articles, only: [:index, :show]
   resources :categories, only: :show
-  
+  root 'pages#home'
+
   # admin
   namespace :admin, path: Settings.admin_path do
     root 'articles#index'
-    resources :articles, :categories, except: :show
+    resources :articles, :categories, :meta, except: :show
   end
   
 end

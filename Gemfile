@@ -34,21 +34,19 @@ gem 'simple_form'
 gem 'kaminari'
 gem 'delayed_job_active_record'
 gem 'settingslogic'
-# translation
-gem 'i18n-active_record', require: 'i18n/active_record'
-gem 'mobility', '~> 0.3.6'
 # file upload
 gem 'ckeditor', git: 'https://github.com/galetahub/ckeditor.git', branch: 'master'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
-# contact form validation
 # gem "recaptcha", require: "recaptcha/rails"
 gem 'devise'
 gem 'devise-async'
+# assets
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'sitemap_generator', require: true 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

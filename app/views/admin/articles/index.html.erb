@@ -29,7 +29,7 @@
         <%= link_to article_path(article.permalink), target: "_blank", class: "btn btn-default mb-sm-5" do %>
           <i class="fa fa-child fa-fw"></i>
         <% end %>  
-        <%= link_to admin_article_path(article), method: "delete", data: { confirm: "Sure?" }, class: "btn btn-default mb-sm-5" do%>
+        <%= link_to admin_article_path(article), method: "delete", data: { confirm: "Sure?" }, class: "btn btn-default" do%>
           <i class="fa fa-bomb fa-fw"></i>
         <% end %>
       </td>

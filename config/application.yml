@@ -1,6 +1,6 @@
 defaults: &defaults
   admin_path: "nest"
-  
+  domain: "https://www.deveb.cc"
 
 production:
   <<: *defaults

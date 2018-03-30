@@ -44,12 +44,24 @@ p > code {
 	box-shadow: 1px 1px 0 #fff, 2px 2px 0 #DDE4E6;
 }
 
+.clear {
+    clear: both;
+}
 .overflow-auto {
 	overflow: auto;
 }
 
+.flat {
+	border-radius: 0;
+}
+
 .navbar a {
 	font-size: 2rem;
+}
+@media only screen and (min-width: 768px){
+.main-content-wrapper {
+	padding-top: 71px
+}
 }
 .article-banner {
 	position:relative; 
@@ -104,4 +116,18 @@ footer span {
 /* articles#show */
 #article h1 {
 	line-height: 1.5;
+}
+
+/* home */
+.profile-pic {
+    border-radius: 50%;
+}
+#profile .form-control {
+	height: unset;
+	padding: 15px;
+}
+
+
+.summary-wrapper{
+    border-top: 1px solid #e7e7e7;
 }

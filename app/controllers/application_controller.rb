@@ -55,6 +55,7 @@ class ApplicationController < ActionController::Base
     @site_name = settings['settings']['site_name']
     @gtm_id = settings['settings']['gtm_id']
     @ga_id = settings['settings']['ga_id']
+    @favicon = settings['images']['favicon']
   end
 
 end

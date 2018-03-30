@@ -8,5 +8,9 @@ images:
   favicon: "/images/system/favicon.jpg"
   profile: "/images/system/profile.jpg"
 profile:
-  name: '111'
-  summary: "<p><strong>11</strong></p>\r\n"
+  name: DC
+  email: dc@gmail.com
+  summary: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta amet
+    nemo quae sed architecto dolorum modi doloremque, necessitatibus velit, ipsum
+    error explicabo? Temporibus tenetur necessitatibus ab eaque odit possimus sapiente
+    minima dolor, asperiores magnam non officiis natus ipsam.</p>\r\n"

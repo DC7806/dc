@@ -4,6 +4,7 @@
     <%= page_title @site_name, @title %>
     <%= meta_desc_tag @meta_desc %>
     <link rel="canonical" href="<%= request.url %>" />
+    <link rel="icon"      href="<%= @favicon %>" type="image/jpg"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots"   content="all" />
@@ -15,7 +16,7 @@
 
   <body>
     <%= render 'layouts/nav' %>
-    <div class="main-content-wrapper pt-xs-50 pt-sm-70">
+    <div class="main-content-wrapper pt-xs-50">
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>

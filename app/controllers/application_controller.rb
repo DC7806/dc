@@ -51,6 +51,10 @@ class ApplicationController < ActionController::Base
 
   def global_settings
     @categories = Category.all
+    settings = YAML::load_file("#{Rails.root}/config/system.yml")
+    @site_name = settings['settings']['site_name']
+    @gtm_id = settings['settings']['gtm_id']
+    @ga_id = settings['settings']['ga_id']
   end
 
 end

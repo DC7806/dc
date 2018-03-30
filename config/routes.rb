@@ -4,14 +4,16 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   
   # user
-  resources :articles, only: [:index, :show]
+  resources :articles, :portfolios, only: [:index, :show]
   resources :categories, only: :show
   root 'pages#home'
 
   # admin
   namespace :admin, path: Settings.admin_path do
     root 'articles#index'
-    resources :articles, :categories, :meta, except: :show
+    resources :articles, :categories, :meta, :portfolios, except: :show
+    get 'system', to: 'system#index'
+    match 'update-system', to: 'system#update_system', via: :patch
   end
   
 end

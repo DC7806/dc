@@ -1,0 +1,50 @@
+<%= form_tag({controller: 'admin/system', action: 'update_system'}, multipart: true) do %>
+  <%= hidden_field_tag '_method', 'patch' %>
+  <ul class="nav nav-tabs nav-justified my-xs-20" role="tablist">
+    <li class="active"><a role="tab" href="#system" data-toggle="tab">System</a></li>
+    <li><a role="tab" href="#profile" data-toggle="tab">Profile</a></li>
+  </ul>
+  <div class="tab-content">
+    <!-- system Panel -->
+    <div role="tabpanel" class="tab-pane active" id="system">
+      <% @admin_system_settings.each do |key, value| %>
+        <div class="form-group">
+          <%= label_tag key, key %>
+          <%= text_field_tag "system[settings][#{key}]", value, class: 'form-control' %>
+        </div>
+      <% end %>
+      <div class="form-group">
+        <% @admin_system_images.slice('favicon').each do |key, value| %>
+        <%= label_tag key, key %>
+        <%= file_field_tag value, name: "system[images][#{key}]", "data-default-file": value, data: {'max-file-size': '500k'}, class: "dropify" %>
+        <% end %> 
+      </div>
+    </div>
+    <!-- profile Info Panel -->
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <% @admin_system_profile.slice('name').each do |key, value| %>
+        <div class="form-group">
+          <%= label_tag key, key %>
+          <%= text_field_tag "system[profile][#{key}]", value, class: 'form-control' %>
+        </div>
+      <% end %>
+      <% @admin_system_profile.slice('summary').each do |key, value| %>
+        <div class="form-group">
+          <%= label_tag key, key %>
+          <%= text_area_tag "system[profile][#{key}]", value, class: 'form-control ckeditor' %>
+        </div>
+      <% end %>
+      <div class="form-group">
+        <% @admin_system_images.slice('profile').each do |key, value| %>
+        <%= label_tag key, key %>
+        <%= file_field_tag value, name: "system[images][#{key}]", "data-default-file": value, data: {'max-file-size': '500k'}, class: "dropify" %>
+        <% end %> 
+      </div>
+    </div>
+    <div class="form-group">
+      <%= submit_tag 'Update', class: 'btn btn-default form-control mt-xs-5' %>
+    </div>
+  </div>
+<% end %>
+
+  

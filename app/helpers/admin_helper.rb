@@ -13,11 +13,10 @@ module AdminHelper
   end
 
   def admin_index_image instance
-    case instance.class.name
-    when 'Admin::Article'
-      image_tag instance.image.src.url(:thumb_200), class: 'wt-100' if instance.image.src.present?
-    when 'Admin::Metum'
+    if instance.class.name == 'Admin::Metum'
       image_tag instance.og_image.url(:thumb_200), class: 'wt-100' if instance.og_image.present?
+    else
+      image_tag instance.image.src.url(:thumb_200), class: 'wt-100' if instance.image.src.present?
     end
   end
 

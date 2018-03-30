@@ -1,0 +1,62 @@
+<%= simple_form_for admin_portfolio do |f| %>
+  <ul class="nav nav-tabs nav-justified my-xs-20" role="tablist">
+    <li class="active"><a role="tab" href="#basics" data-toggle="tab">Basics</a></li>
+    <li><a role="tab" href="#content" data-toggle="tab">Content</a></li>
+    <li ><a role="tab" href="#seo" data-toggle="tab">SEO</a></li>
+  </ul>
+  <div class="tab-content">
+    <!-- Basics Panel -->
+    <div role="tabpanel" class="tab-pane active" id="basics">
+      <div class="form-group">
+        <%= f.input :portfolio_type, collection: %w[coporate blog] %>
+      </div>
+      <%= f.simple_fields_for :image do |i| %>
+        <div class="form-group">
+          <%= i.input :src, input_html: {'data-default-file': admin_portfolio.image.src.url, class: 'dropify'} %>
+          <%= i.input :alt %>
+        </div>
+      <% end %>
+    </div>
+    <!-- Basic Info Panel -->
+    <div role="tabpanel" class="tab-pane" id="content">
+      <div class="form-group">
+        <%= f.input :title, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.input :description, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.input :content, as: :ckeditor %>
+      </div>
+    </div>
+    <!-- SEO Panel -->
+    <div role="tabpanel" class="tab-pane" id="seo">
+      <div class="form-group">
+        <%= f.input :permalink, class: 'form-control' %>
+      </div>
+      <%= f.simple_fields_for :metum do |m| %>
+      <div class="form-group">
+        <%= m.input :title %>
+      </div>
+      <div class="form-group">
+        <%= m.input :meta_description, as: :text %>
+      </div>
+      <div class="form-group">
+        <%= m.input :og_title %>
+      </div>
+      <div class="form-group">
+        <%= m.input :og_description, as: :text%>
+      </div>
+      <div class="form-group">
+        <%= m.input :og_image, input_html: {'data-default-file': admin_portfolio.metum.og_image.url,class: 'dropify'} %>
+      </div>
+      <% end %>
+    </div>
+    <div class="form-group">
+      <%= f.button :submit, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= link_to "Cancel", admin_portfolios_path, class: "btn btn-default form-control"%>
+    </div>
+  </div>
+<% end %>

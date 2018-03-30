@@ -1,0 +1,12 @@
+---
+settings:
+  site_name: deveb
+  gtm_id: gtm123
+  ga_id: ga123
+  fb_id: fb1234
+images:
+  favicon: "/images/system/favicon.jpg"
+  profile: "/images/system/profile.jpg"
+profile:
+  name: '111'
+  summary: "<p><strong>11</strong></p>\r\n"

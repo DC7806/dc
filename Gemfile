@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'simple_form'
 gem 'kaminari'
-gem 'delayed_job_active_record'
+# gem 'delayed_job_active_record'
 gem 'settingslogic'
 # file upload
 gem 'ckeditor', git: 'https://github.com/galetahub/ckeditor.git', branch: 'master'

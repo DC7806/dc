@@ -20,7 +20,7 @@ class Article < ApplicationRecord
   def default_values
     self.permalink.parameterize = title if self.permalink.blank?
     self.metum.og_title = title if self.metum.og_title.blank?
-    self.metum.og_description = meta_description if self.metum.og_description.blank?
+    self.metum.og_description = description if self.metum.og_description.blank?
   end
 
 end

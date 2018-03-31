@@ -13,6 +13,15 @@
 !/log/.keep
 !/tmp/.keep
 
+/config/database.yml
+/config/secrets.yml
+/config/application.yml
+
+/public/uploads/
+/public/images/
+/public/attachments/
+/public/sitemap.xml
+
 /node_modules
 /yarn-error.log
 

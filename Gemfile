@@ -46,7 +46,8 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'sitemap_generator', require: true 
+gem 'sitemap_generator', require: true
+gem 'whenever', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -57,6 +58,9 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '~> 3.10', '>= 3.10.1'
+  gem 'capistrano-rails', '~> 1.3', '>= 1.3.1'
+  gem 'capistrano-rbenv', git: 'https://github.com/capistrano/rbenv.git', branch: 'master'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'

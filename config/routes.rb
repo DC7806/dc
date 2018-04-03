@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   # admin
-  namespace :admin, path: Settings.admin_path do
+  namespace :admin, path: Figaro.env.admin_path do
     root 'articles#index'
     resources :articles, :categories, :meta, :portfolios, except: :show
     get 'system', to: 'system#index'

@@ -1,4 +1,4 @@
-SitemapGenerator::Sitemap.default_host = Settings.domain
+SitemapGenerator::Sitemap.default_host = Figaro.env.domain
 SitemapGenerator::Sitemap.compress = false
 SitemapGenerator::Sitemap.create_index = false
 

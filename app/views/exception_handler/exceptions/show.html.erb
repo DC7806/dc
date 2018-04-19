@@ -1,0 +1,7 @@
+<%= content_tag :div, class: "exception", data: { status: @exception.status, response: @exception.response.to_s.humanize, rails: Rails.version }, onclick: ("location.href=\"#{root_url}\";" if @exception.status == "500" && Rails.application.routes.recognize_path("/")), title: ("Return Home" if @exception.status == "500" && Rails.application.routes.recognize_path("/")) do %>
+  <%#= content_tag :span, @exception.description.html_safe %>
+<% end %>
+
+<div class="container text-center">
+  <h1 style="padding-top: 25%; vertical-align: middle; font-size: 6rem;">110010100</h1>
+</div>

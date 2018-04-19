@@ -8,7 +8,12 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find_by(permalink: params[:id])
-    page_meta @article
+    if @article.blank?
+      redirect_to articles_path
+      flash[:alert] = 'Page Not Found'
+    else
+      page_meta @article
+    end
   end
 
 end

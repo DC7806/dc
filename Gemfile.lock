@@ -122,6 +122,10 @@ GEM
       activejob (>= 5.0)
       devise (>= 4.0)
     erubi (1.7.1)
+    exception_handler (0.7.7.0)
+      bundler
+      rails (>= 4.2.0)
+      responders
     execjs (2.7.0)
     ffi (1.9.23)
     figaro (1.1.1)
@@ -293,6 +297,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-async
+  exception_handler
   figaro
   font-awesome-rails
   jbuilder (~> 2.5)

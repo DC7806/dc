@@ -27,7 +27,7 @@ class Admin::MetaController < AdminController
   end
 
   def metum_params
-    params.require(:admin_metum).permit(:page, :title, :og_title, :og_description, :og_image)
+    params.require(:admin_metum).permit(:page, :title, :meta_description, :og_title, :og_description, :og_image)
   end
 
 end

@@ -31,5 +31,5 @@ module ApplicationHelper
       render "tracking/#{key}" if value.present?
     end.join.html_safe
   end
-
+  
 end

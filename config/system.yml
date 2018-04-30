@@ -9,7 +9,7 @@ images:
   profile: "/images/system/profile.jpg"
 profile:
   name: DC
-  email: dachang.dev@gmail.com
+  email: dc@gmail.com
   github: DC7806
-  summary: '<p style="text-align: center;">A digital marketer who loves building web
-    apps</p>'
+  summary: "<p style=\"text-align: center;\">A digital marketer who loves building
+    web apps</p>\r\n"

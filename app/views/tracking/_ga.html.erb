@@ -1,7 +1,7 @@
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=<%= @ga_id %>"></script>
 <script>
-  $(document).on('turbolinks:load', function () {
+  document.addEventListener('turbolinks:load', function(event) {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());

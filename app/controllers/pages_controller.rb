@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     @email = profile['profile']['email']
     @summary = profile['profile']['summary'].html_safe
     @picture = profile['images']['profile']
+    @github_handle = profile['profile']['github']
     @articles = Article.order(created_at: :desc).last(6)
     @portfolios = Portfolio.order(created_at: :desc).last(2)
   end

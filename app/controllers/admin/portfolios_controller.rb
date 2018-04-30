@@ -13,7 +13,6 @@ class Admin::PortfoliosController < AdminController
   def new
     @admin_portfolio = Admin::Portfolio.new
     @admin_portfolio.build_image
-    @admin_portfolio.build_metum
   end
 
   def create
@@ -50,9 +49,8 @@ class Admin::PortfoliosController < AdminController
   end
 
   def portfolio_params
-    params.require(:admin_portfolio).permit(:title, :portfolio_type, :description, :permalink, :content,
-                                         image_attributes: [:id, :page, :src, :alt, :_destroy],
-                                         metum_attributes: [:id, :page, :title, :meta_description, :og_title, :og_description, :og_image, :_destroy])
+    params.require(:admin_portfolio).permit(:title, :portfolio_type, :repo, :permalink,
+                                            image_attributes: [:id, :page, :src, :alt, :_destroy])
   end
 
 end

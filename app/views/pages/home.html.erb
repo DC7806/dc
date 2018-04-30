@@ -1,22 +1,29 @@
 <div id="profile" class="my-xs-20 my-sm-40">
   <div class="container">
     <div class="row">
-      <div class="col-sm-8 col-sm-offset-2 mt-xs-20">
-        <h1 class="text-center my-xs-20"><%= @site_name %></h1>
+      
+      <div class="col-sm-8 col-sm-offset-2 mt-xs-20 text-center">
+        <h1 class="my-xs-20"><%= @site_name %></h1>
         <%= image_tag @picture, alt: 'DC', class: 'col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 profile-pic' %>  
         <div class="clear mt-xs-20 mt-sm-30">
-        <h2 class="text-center mt-xs-20"><%= @name %></h2>
-        <h3 class="text-center mb-xs-20"><%= @email %></h3>
+        <h2 class="mt-xs-20"><%= @name %></h2>
+        <h3 class="mb-xs-20"><%= @email %></h3>
           <div class="summary-wrapper pt-xs-20">
             <%= @summary %>
+            <p>
+              <%= link_to "https://github.com/#{@github_handle}", target: '_blank' do %>
+                <i class="fa fa-github fa-2x fa-fw"></i>    
+              <% end %>
+            </p>
           </div>
         </div>
       </div>
+
       <div class="clear col-sm-10 col-sm-offset-1">
-        <h2 class="text-center">Latest Articles</h2>
+        <h2 class="text-center mb-xs-0">Latest Articles</h2>
         <ul class="article-list">
         <% @articles.each do |article| %>
-          <li class="overflow-auto py-xs-20">
+          <li class="overflow-auto py-xs-10 py-xs-20">
             <article class="article-list-item">
               <%= link_to article_path(article.permalink) do %>
               <h3 class="pull-left"><%= article.title %></h3>
@@ -26,17 +33,20 @@
           </li>
         <% end %>
         </ul>
-        <h2 class="text-center mt-sm-40">Works</h2>
+        <h2 class="text-center mt-sm-40 mb-xs-15 mb-sm-20">Works</h2>
         <% @portfolios.each do |port| %>
-        <div class="col-sm-6 py-xs-15">
-          <%= link_to portfolio_path(port.permalink) do %>
-            <%= image_tag port.image.src.url, alt: port.image.alt %>
-            <p><%= port.portfolio_type %></p>
-            <h3><%= port.title %></h3>
+        <div class="col-sm-6 px-xs-0 px-sm-15">
+          <%= image_tag port.image.src.url, alt: port.image.alt %>
+          <h3 class="mt-xs-10 mb-xs-5"><%= port.title %></h3>
+          <p class="mb-xs-5"><%= port.portfolio_type %></p>
+          <%= link_to port.permalink, target: '_blank', class: 'btn btn-default form-control mb-xs-5' do %>
+            <i class="fa fa-desktop fa-2x fa-fw"></i>
+          <% end %>
+          <%= link_to "https://github.com/DC7806/#{port.repo}", target: '_blank', class: 'btn btn-default form-control' do %>
+            <i class="fa fa-github fa-2x fa-fw"></i>
           <% end %>
         </div>
         <% end %>
-        <%= link_to 'See All', portfolios_path, class: 'btn btn-default form-control flat mt-sm-40' %>
       </div>
     </div>
   </div>

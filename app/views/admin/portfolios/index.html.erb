@@ -5,25 +5,25 @@
     <tr>
       <td class="col-sm-1">Date</td>
       <td class="col-sm-2">Image</td>
+      <td class="col-sm-3">Type</td>
       <td class="col-sm-4">Title</td>
-      <td class="hidden-sm col-md-4">Description</td>
     </tr>
   </thead>
   <tbody>
-    <% @admin_portfolios.each do |portfolio|%>
+    <% @admin_portfolios.each do |port|%>
     <tr>
-      <td class="col-sm-1"><%= portfolio.created_at.to_date %></td>
-      <td class="col-sm-2"><%= admin_index_image portfolio %></td>
-      <td class="col-sm-4"><%= portfolio.title %></td>
-      <td class="hidden-sm col-md-4"><%= portfolio.description %></td>
-      <td class="col-sm-1 text-center">
-        <%= link_to edit_admin_portfolio_path(portfolio), class: "btn btn-default mb-sm-5" do %>
+      <td class="col-sm-1"><%= port.created_at.to_date %></td>
+      <td class="col-sm-2"><%= admin_index_image port %></td>
+      <td class="col-sm-3"><%= port.portfolio_type %></td>
+      <td class="col-sm-4"><%= port.title %></td>
+      <td class="col-sm-2 text-center">
+        <%= link_to edit_admin_portfolio_path(port), class: "btn btn-default" do %>
           <i class="fa fa-bolt fa-fw"></i>
         <% end %>
-        <%= link_to portfolio_path(portfolio.permalink), target: "_blank", class: "btn btn-default mb-sm-5" do %>
-          <i class="fa fa-child fa-fw"></i>
-        <% end %>  
-        <%= link_to admin_portfolio_path(portfolio), method: "delete", data: { confirm: "Sure?" }, class: "btn btn-default" do%>
+        <%= link_to "https://github.com/DC7806/#{port.repo}", target: '_blank', class: "btn btn-default" do %>
+          <i class="fa fa-github fa-fw"></i>
+        <% end %>
+        <%= link_to admin_portfolio_path(port), method: "delete", data: { confirm: "Sure?" }, class: "btn btn-default" do%>
           <i class="fa fa-bomb fa-fw"></i>
         <% end %>
       </td>

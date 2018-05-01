@@ -1,11 +1,9 @@
 //= require jquery
 //= require bootstrap
-//= require turbolinks
+
 //= require prism
 
-// document.addEventListener('turbolinks:load', event => {
-//   if (typeof ga === 'function') {
-//     ga('set', 'location', event.data.url);
-//     ga('send', 'pageview');
-//   }
-// });
+// $(document).on 'turbolinks:load', (event.originalEvent) ->
+//   if typeof ga is "function"
+//     ga("set", "location", location.pathname)
+//     ga("send", "pageview")

@@ -177,11 +177,12 @@ footer span {
 	padding: 20px 0;
 }
 
-#resume .row:not(:last-child) {
+#resume.resume_en .row:not(:last-child) {
 	border-bottom: 1px solid #04900f;
 }
 
-#resume ul {
+#resume ul,
+#resume ol {
 	margin-bottom: 20px;
 	-webkit-padding-start: 25px;
 	-moz-padding-start: 25px;
@@ -192,12 +193,25 @@ footer span {
 	color: #666;
 }
 
+#resume a:not(:first-child) {
+	color: inherit;
+}
+
 .work-item:not(:last-child) {
 	border-bottom: 1px solid #e8e8e8;
 }
+
+.resume_zh h2 {
+	border-bottom: 1px solid #04900f;
+}
+
+.resume_zh .work-item p {
+	font-size: 2rem;
+}
+
 @media only screen and (min-width: 768px){
 .work-list {
-	height: 50vh;
+	height: 60vh;
     overflow-y: scroll;
     overflow-x: hidden;
 }

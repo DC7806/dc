@@ -1,6 +1,6 @@
 //= require jquery
+//= require jquery_ujs
 //= require bootstrap
-
 //= require prism
 
 // $(document).on 'turbolinks:load', (event.originalEvent) ->

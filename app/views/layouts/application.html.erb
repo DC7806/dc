@@ -11,8 +11,8 @@
     <meta name="robots"   content="all" />
     <%= og_tag @og %>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', async: true %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
     <%#= tracking_tags @gtm_id, @ga_id %>
     <script async src="https://www.googletagmanager.com/gtag/js?id=<%= @ga_id %>"></script>
     <script type="text/javascript">

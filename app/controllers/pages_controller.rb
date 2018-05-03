@@ -13,12 +13,15 @@ class PagesController < ApplicationController
 
 
   def resume
+    @title = 'Resume'
   end
-  
+
   def resume_en
+    @title = 'Resume EN'
   end
 
   def resume_zh
+    @title = '工作經驗'
   end
 
 end

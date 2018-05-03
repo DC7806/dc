@@ -6,9 +6,9 @@
         <% @portfolios.each do |port| %>
         <div class="portfolio-item mb-xs-20 mb-sm-40">
           <%= image_tag port.image.src %>
-          <h2 class="mt-xs-10 mb-xs-0"><%= port.title %></h2>
+          <h2 class="my-xs-10"><%= port.title %></h2>
           <p class="mb-xs-5"><%= port.portfolio_type %></p>
-          <p class="mb-xs-5"><%= port.description %></p>
+          <p class="mb-xs-10"><%= port.description %></p>
           <%= link_to "#{port.permalink}", target: '_blank', class: 'btn btn-default mb-xs-5' do %>
             <i class="fa fa-desktop fa-2x fa-fw"></i>
           <% end %>

@@ -35,7 +35,7 @@
         </ul>
         <h2 class="text-center mt-sm-40 mb-xs-15 mb-sm-20"> Latest Works</h2>
         <% @portfolios.each do |port| %>
-        <div class="col-sm-4 px-xs-0 px-sm-15">
+        <div class="col-sm-6 px-xs-0 px-sm-15">
           <%= image_tag port.image.src.url, alt: port.image.alt %>
           <h3 class="mt-xs-10 mb-xs-5"><%= port.title %></h3>
           <p class="mb-xs-5"><%= port.portfolio_type %></p>

@@ -34,19 +34,36 @@
         <% end %>
         </ul>
         <h2 class="text-center mt-sm-40 mb-xs-15 mb-sm-20"> Latest Works</h2>
-        <% @portfolios.each do |port| %>
-        <div class="col-sm-6 px-xs-0 px-sm-15">
-          <%= image_tag port.image.src.url, alt: port.image.alt %>
-          <h3 class="mt-xs-10 mb-xs-5"><%= port.title %></h3>
-          <p class="mb-xs-5"><%= port.portfolio_type %></p>
-          <%= link_to port.permalink, target: '_blank', class: 'btn btn-default form-control mb-xs-5' do %>
-            <i class="fa fa-desktop fa-2x fa-fw"></i>
-          <% end %>
-          <%= link_to "https://github.com/DC7806/#{port.repo}", target: '_blank', class: 'btn btn-default form-control' do %>
-            <i class="fa fa-github fa-2x fa-fw"></i>
-          <% end %>
-        </div>
+        <div class="row">
+        <% @portfolios.first(2).each do |port| %>
+          <div class="col-sm-6 px-xs-0 px-sm-15 mb-xs-20 portfolio-item">
+            <%= image_tag port.image.src.url, alt: port.image.alt %>
+            <div class="px-xs-15 px-sm-0">
+              <h3 class="mt-xs-10 mb-xs-5"><%= port.title %></h3>
+              <span class="mb-xs-10 block"><%= port.portfolio_type %></span>
+              <%= link_to port.permalink, target: '_blank', class: 'btn btn-default mb-xs-5' do %>
+                <i class="fa fa-desktop fa-2x fa-fw"></i>
+              <% end %>
+              <%= repo_link port.repo %>
+            </div>
+          </div>
         <% end %>
+        </div>
+        <div class="row">
+        <% @portfolios.last(2).each do |port| %>
+          <div class="col-sm-6 px-xs-0 px-sm-15 mb-xs-20 portfolio-item">
+            <%= image_tag port.image.src.url, alt: port.image.alt %>
+            <div class="px-xs-15 px-sm-0">
+              <h3 class="mt-xs-10 mb-xs-5"><%= port.title %></h3>
+              <span class="mb-xs-10 block"><%= port.portfolio_type %></span>
+              <%= link_to port.permalink, target: '_blank', class: 'btn btn-default mb-xs-5' do %>
+                <i class="fa fa-desktop fa-2x fa-fw"></i>
+              <% end %>
+              <%= repo_link port.repo %>
+            </div>
+          </div>
+        <% end %>
+        </div>
         <%= link_to "All Works", portfolios_path, class: 'btn btn-default form-control mt-xs-20' %>
       </div>
     </div>

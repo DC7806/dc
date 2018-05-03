@@ -50,8 +50,6 @@ gem 'sitemap_generator', require: true
 gem 'whenever', require: false
 # error pages
 gem 'exception_handler'
-# eliminate render-blocking CSS
-#gem 'rails_critical_css_server'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

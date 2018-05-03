@@ -49,7 +49,7 @@ class Admin::PortfoliosController < AdminController
   end
 
   def portfolio_params
-    params.require(:admin_portfolio).permit(:title, :portfolio_type, :repo, :permalink,
+    params.require(:admin_portfolio).permit(:title, :portfolio_type, :repo, :permalink, :description,
                                             image_attributes: [:id, :page, :src, :alt, :_destroy])
   end
 

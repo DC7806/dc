@@ -162,7 +162,8 @@ footer span {
 	color: #fff
 }
 
-.resume-index-wrapper > a > div:hover {
+.resume-index-wrapper > a > div:hover,
+#resume .banner > a > div:hover {
 	background-color: rgba(255,255,255,.5);
 }
 
@@ -170,6 +171,9 @@ footer span {
 	background: url('/images/resume/dev.jpg') bottom / cover;
 	height: 40vh;
 	position: relative;
+}
+
+#resume .banner a {
 	color: #fff;
 }
 
@@ -193,7 +197,8 @@ footer span {
 	color: #666;
 }
 
-#resume a:not(:first-child) {
+#resume.resume-en a:not(:first-child),
+#resume.resume-zh a:not(:first-child) {
 	color: inherit;
 }
 
@@ -214,5 +219,15 @@ footer span {
 	height: 60vh;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+}
+
+/* portfolios */
+#portfolios p {
+	line-height: 1.2;
+}
+@media only screen and (max-width: 767px){
+#portfolios a {
+	width: 100%;
 }
 }

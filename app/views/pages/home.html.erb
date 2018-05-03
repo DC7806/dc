@@ -2,8 +2,8 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-sm-8 col-sm-offset-2 mt-xs-20 text-center">
-        <h1 class="my-xs-20"><%= @site_name %></h1>
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <h1 class="mt-xs-0 mb-xs-20"><%= @site_name %></h1>
         <%= image_tag @picture, alt: 'DC', class: 'col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 profile-pic' %>  
         <div class="clear mt-xs-20 mt-sm-30">
         <h2 class="mt-xs-20"><%= @name %></h2>
@@ -47,6 +47,7 @@
           <% end %>
         </div>
         <% end %>
+        <%= link_to "All Works", portfolios_path, class: 'btn btn-default form-control mt-xs-20' %>
       </div>
     </div>
   </div>

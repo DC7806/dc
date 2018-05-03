@@ -5,6 +5,9 @@
   <div class="form-group">
     <%= f.input :portfolio_type %>
   </div>
+  <div class="form-group">
+    <%= f.input :description %>
+  </div>
   <%= f.simple_fields_for :image do |i| %>
   <div class="form-group">
     <%= i.input :src, input_html: {'data-default-file': admin_portfolio.image.src.url, class: 'dropify'} %>

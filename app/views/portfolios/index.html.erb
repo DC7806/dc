@@ -1,0 +1,21 @@
+<div id="portfolios" class="mt-xs-20 mt-sm-60">
+  <div class="container">
+    <h1 class="text-center mt-xs-0 mb-xs-20 mb-sm-40">Works</h1>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <% @portfolios.each do |port| %>
+        <div class="portfolio-item mb-xs-20 mb-sm-40">
+          <%= image_tag port.image.src %>
+          <h2 class="mt-xs-10 mb-xs-0"><%= port.title %></h2>
+          <p class="mb-xs-5"><%= port.portfolio_type %></p>
+          <p class="mb-xs-5"><%= port.description %></p>
+          <%= link_to "#{port.permalink}", target: '_blank', class: 'btn btn-default mb-xs-5' do %>
+            <i class="fa fa-desktop fa-2x fa-fw"></i>
+          <% end %>
+          <%= repo_link(port.repo) %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

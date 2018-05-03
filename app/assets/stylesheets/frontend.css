@@ -95,7 +95,32 @@ footer span {
 	color: #777;
 	line-height: 50px;
 }
+.pos-rel{
+	position: relative;
+}
+.div-ver-center {
+	transform: translate3d(0, -50%, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    top: 50%;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+}
+.btn-white {
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 0;
+	font-size: 2rem
+}
+.btn-white:hover {
+	background-color: #fff;
+	color: #777;
+}
 
+.inline {
+	display: inline;
+}
+/* home */
 .article-list {
 	padding: 0;
 	margin: 0;
@@ -129,4 +154,51 @@ footer span {
 
 .summary-wrapper{
     border-top: 1px solid #e7e7e7;
+}
+
+/* resume */
+
+.resume-index-wrapper > a {
+	color: #fff
+}
+
+.resume-index-wrapper > a > div:hover {
+	background-color: rgba(255,255,255,.5);
+}
+
+#resume .banner {
+	background: url('/images/resume/dev.jpg') bottom / cover;
+	height: 40vh;
+	position: relative;
+	color: #fff;
+}
+
+#resume .row {
+	padding: 20px 0;
+}
+
+#resume .row:not(:last-child) {
+	border-bottom: 1px solid #04900f;
+}
+
+#resume ul {
+	margin-bottom: 20px;
+	-webkit-padding-start: 25px;
+	-moz-padding-start: 25px;
+}
+
+#resume li {
+	font-size: 2rem;
+	color: #666;
+}
+
+.work-item:not(:last-child) {
+	border-bottom: 1px solid #e8e8e8;
+}
+@media only screen and (min-width: 768px){
+.work-list {
+	height: 50vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 }

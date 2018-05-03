@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   # user
   resources :articles, only: [:index, :show]
   resources :categories, only: :show
+  resources :portfolios, only: :index
+  get 'resume', to: 'pages#resume'
+  get 'resume-en', to: 'pages#resume_en'
+  get 'resume-zh', to: 'pages#resume_zh'
   root 'pages#home'
 
   # admin

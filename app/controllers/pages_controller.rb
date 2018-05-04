@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     @picture = profile['images']['profile']
     @github_handle = profile['profile']['github']
     @articles = Article.order(created_at: :desc).first(6)
-    @portfolios = Portfolio.order(created_at: :desc).first(4)
+    @portfolios = Portfolio.order(sort: :asc).first(4)
   end
 
 

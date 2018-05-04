@@ -3,10 +3,10 @@ class Admin::PortfoliosController < AdminController
   
   def index
     if params[:query]
-      @admin_portfolios = Admin::Portfolio.search(params[:query]).includes(:image).order(created_at: :desc).page(params[:page]).per(10)
+      @admin_portfolios = Admin::Portfolio.search(params[:query]).includes(:image).order(sort: :asc).page(params[:page]).per(10)
       params[:query] = nil
     else
-      @admin_portfolios = Admin::Portfolio.includes(:image).order(created_at: :desc).page(params[:page]).per(10)
+      @admin_portfolios = Admin::Portfolio.includes(:image).order(sort: :asc).page(params[:page]).per(10)
     end
   end
 

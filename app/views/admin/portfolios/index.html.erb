@@ -9,9 +9,9 @@
       <td class="col-sm-4">Title</td>
     </tr>
   </thead>
-  <tbody>
-    <% @admin_portfolios.each do |port|%>
-    <tr>
+  <tbody class="sortable">
+    <% @admin_portfolios.each_with_sortable_id do |port, sortable_id| %>
+    <tr id="<%= sortable_id %>">
       <td class="col-sm-1"><%= port.created_at.to_date %></td>
       <td class="col-sm-2"><%= admin_index_image port %></td>
       <td class="col-sm-3"><%= port.portfolio_type %></td>
@@ -32,3 +32,9 @@
   </tbody>
 </table>
 <%= paginate @admin_portfolios %>
+
+<script type="text/javascript">
+  $(function() {
+    $('.sortable').railsSortable();
+  });  
+</script>
